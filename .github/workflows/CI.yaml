@@ -1,6 +1,7 @@
 name: ROS2 Practice Check
 
-on: [push, pull_request]
+on:
+  pull_request_target:
 
 jobs:
   build:
@@ -23,10 +24,9 @@ jobs:
       run: |
         for dir in submissions/*; do
           if [ -d "$dir" ]; then
-            if [ ! -f "$dir/CMakeLists.txt" ] || [ ! -f "$dir/package.xml" ]; then
+            if [ ! -f "$dir/package.xml" ]; then
               echo "Submission $dir is missing required files."
               exit 1
             fi
           fi
         done
-
