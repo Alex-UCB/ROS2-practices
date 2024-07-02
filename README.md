@@ -11,12 +11,11 @@
 ### Directory Structure
 
 ros2-practices/
-
 ├── submissions/
-│ ├── student_name/
-│ │ ├── src/
-│ │ ├── CMakeLists.txt
-│ │ └── package.xml
+│   ├── student_name/
+│   │   ├── src/
+│   │   ├── CMakeLists.txt
+│   │   └── package.xml
 
 
 ### Basic Requirements
