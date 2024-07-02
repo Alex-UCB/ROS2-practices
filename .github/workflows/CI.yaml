@@ -21,12 +21,19 @@ jobs:
       run: source /opt/ros/humble/setup.bash
 
     - name: Check Submissions
-      run: |
-        for dir in submissions/*; do
-          if [ -d "$dir" ]; then
-            if [ ! -f "$dir/package.xml" ]; then
-              echo "Submission $dir is missing required files."
-              exit 1
+    run: |
+      for dir in submissions/*; do
+        if [ -d "$dir" ]; then
+        # echo "Checking submission: $dir"
+        for subdir in "$dir"/*; do
+            if [ -d "$subdir" ]; then
+                # echo "Checking subdirectory: $subdir"
+                if [ ! -f "$subdir/package.xml" ]; then
+                    echo "Subdirectory $subdir is missing required files."
+                    exit 1
+                fi
             fi
-          fi
         done
+        fi
+      done
+
