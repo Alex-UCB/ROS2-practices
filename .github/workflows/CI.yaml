@@ -30,6 +30,6 @@ jobs:
               fi
             done
           else
-            echo "    Directory $main_dir is empty and will be skipped."
+            echo " Directory $main_dir is empty and will be skipped."
           fi
         done
